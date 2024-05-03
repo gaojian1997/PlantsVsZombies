@@ -1,0 +1,89 @@
+[gd_scene load_steps=16 format=3 uid="uid://cam0fcyt4prt0"]
+
+[ext_resource type="Script" path="res://豌豆射手.gd" id="1_clwvs"]
+[ext_resource type="Texture2D" uid="uid://blqybgw6syj52" path="res://assets/对象/豌豆射手/Peashooter-1.png" id="1_cs4yu"]
+[ext_resource type="Texture2D" uid="uid://d0sw2njgqxby0" path="res://assets/对象/豌豆射手/Peashooter-2.png" id="2_bbm7s"]
+[ext_resource type="Texture2D" uid="uid://emafb33wr0rp" path="res://assets/对象/豌豆射手/Peashooter-3.png" id="3_ox6rq"]
+[ext_resource type="Texture2D" uid="uid://d4bueiymjpge0" path="res://assets/对象/豌豆射手/Peashooter-4.png" id="4_o5la0"]
+[ext_resource type="Texture2D" uid="uid://b1pi8c508yetd" path="res://assets/对象/豌豆射手/Peashooter-5.png" id="5_6sdl1"]
+[ext_resource type="Texture2D" uid="uid://cmhabj4fgihrl" path="res://assets/对象/豌豆射手/Peashooter-6.png" id="6_ww6w4"]
+[ext_resource type="Texture2D" uid="uid://boyx8jp7vtgvt" path="res://assets/对象/豌豆射手/Peashooter-7.png" id="7_3vege"]
+[ext_resource type="Texture2D" uid="uid://bmk8luvq3q8g8" path="res://assets/对象/豌豆射手/Peashooter-8.png" id="8_jn2v2"]
+[ext_resource type="Texture2D" uid="uid://tccqxaxiyqov" path="res://assets/对象/豌豆射手/Peashooter-9.png" id="9_h3c87"]
+[ext_resource type="Texture2D" uid="uid://cpf8kr3qggf5i" path="res://assets/对象/豌豆射手/Peashooter-10.png" id="10_p03k6"]
+[ext_resource type="Texture2D" uid="uid://chvyi5ue32nqt" path="res://assets/对象/豌豆射手/Peashooter-11.png" id="11_wp3pw"]
+[ext_resource type="Texture2D" uid="uid://xw3ecunjx2kp" path="res://assets/对象/豌豆射手/Peashooter-12.png" id="12_0q2gu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mo63x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cs4yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bbm7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ox6rq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o5la0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6sdl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ww6w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3vege")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jn2v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h3c87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p03k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wp3pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0q2gu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c17hi"]
+size = Vector2(52, 64)
+
+[node name="豌豆射手" type="Node2D"]
+script = ExtResource("1_clwvs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_mo63x")
+autoplay = "default"
+frame_progress = 0.780707
+speed_scale = 0.75
+
+[node name="BeanArea2D" type="Area2D" parent="." groups=["bean", "plant"]]
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeanArea2D"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_c17hi")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(29, -20)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="BeanArea2D" to="." method="_on_bean_area_2d_entered"]
+[connection signal="area_exited" from="BeanArea2D" to="." method="_on_bean_area_2d_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,98 @@
+[gd_scene load_steps=18 format=3 uid="uid://b1kns6yyiga3f"]
+
+[ext_resource type="Texture2D" uid="uid://b86f44buepbb3" path="res://assets/对象/辣椒/Jalapeno-1.png" id="1_h0af3"]
+[ext_resource type="Script" path="res://火爆辣椒.gd" id="1_te3on"]
+[ext_resource type="Texture2D" uid="uid://cjyxays40ubke" path="res://assets/对象/辣椒/Jalapeno-2.png" id="2_0ojns"]
+[ext_resource type="Texture2D" uid="uid://bco0funv4t7gj" path="res://assets/对象/火焰/JalapenoAttack-1.png" id="2_33uxl"]
+[ext_resource type="Texture2D" uid="uid://bw0cil03n2xeh" path="res://assets/对象/辣椒/Jalapeno-3.png" id="3_curqg"]
+[ext_resource type="Texture2D" uid="uid://cujnmvpj1305n" path="res://assets/对象/火焰/JalapenoAttack-2.png" id="3_og2uv"]
+[ext_resource type="Texture2D" uid="uid://xsnuwx2cy3n8" path="res://assets/对象/辣椒/Jalapeno-4.png" id="4_rhhye"]
+[ext_resource type="Texture2D" uid="uid://bca7wgf7ri17p" path="res://assets/对象/火焰/JalapenoAttack-4.png" id="4_rmpx4"]
+[ext_resource type="Texture2D" uid="uid://bjdir8ytmuttf" path="res://assets/对象/火焰/JalapenoAttack-5.png" id="5_3ejlh"]
+[ext_resource type="Texture2D" uid="uid://conq00xiarypg" path="res://assets/对象/辣椒/Jalapeno-5.png" id="5_8fgt4"]
+[ext_resource type="Texture2D" uid="uid://cbftncvh0mmbn" path="res://assets/对象/火焰/JalapenoAttack-6.png" id="6_55qju"]
+[ext_resource type="Texture2D" uid="uid://c2tcdkyegwgpj" path="res://assets/对象/辣椒/Jalapeno-6.png" id="6_pxbgt"]
+[ext_resource type="Texture2D" uid="uid://cjqh1av82e5ek" path="res://assets/对象/辣椒/Jalapeno-7.png" id="7_ajseo"]
+[ext_resource type="Texture2D" uid="uid://cc38y18qhsuhx" path="res://assets/对象/火焰/JalapenoAttack-7.png" id="7_bc1l6"]
+[ext_resource type="Texture2D" uid="uid://b7muukcb6ci5w" path="res://assets/对象/火焰/JalapenoAttack-8.png" id="8_seqfc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5u8ox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_33uxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_og2uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rmpx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3ejlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_55qju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bc1l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_seqfc")
+}],
+"loop": false,
+"name": &"boom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h0af3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0ojns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_curqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rhhye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8fgt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pxbgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ajseo")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmyf5"]
+size = Vector2(479, 76)
+
+[node name="Pepper" type="Node2D"]
+script = ExtResource("1_te3on")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5u8ox")
+animation = &"boom"
+autoplay = "default"
+speed_scale = 0.5
+
+[node name="PepperArea2D" type="Area2D" parent="." groups=["pepper"]]
+collision_layer = 512
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PepperArea2D"]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_wmyf5")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

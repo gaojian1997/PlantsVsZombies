@@ -1,0 +1,15 @@
+AudioStreamPlayer2D
+Timer
+Sprite2D
+Node2D
+AnimationPlayer
+AnimatedSprite2D
+Area2D
+CollisionShape2D
+VisibleOnScreenNotifier2D
+TextEdit
+Marker2D
+TextureRect
+TextureButton
+Label
+AudioStreamPlayer

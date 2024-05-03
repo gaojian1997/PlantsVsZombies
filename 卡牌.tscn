@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bapiacuwiotf4"]
+
+[ext_resource type="Texture2D" uid="uid://cqbmgnpwx352j" path="res://assets/卡牌/太阳花A.png" id="1_ea1ol"]
+[ext_resource type="Script" path="res://卡牌.gd" id="2_ka6jl"]
+
+[node name="卡牌" type="TextureButton"]
+offset_right = 172.0
+offset_bottom = 234.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_ea1ol")
+script = ExtResource("2_ka6jl")

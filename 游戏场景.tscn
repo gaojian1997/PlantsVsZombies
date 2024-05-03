@@ -1,0 +1,425 @@
+[gd_scene load_steps=19 format=3 uid="uid://bi5mrlq4cg5vx"]
+
+[ext_resource type="Texture2D" uid="uid://h1sy7ke8rptc" path="res://assets/背景/2017-10-02_20-27-08.png" id="1_oir0j"]
+[ext_resource type="Script" path="res://游戏场景.gd" id="1_ywci6"]
+[ext_resource type="PackedScene" uid="uid://kgt5murwqvs6" path="res://阳光收集器.tscn" id="3_i47c7"]
+[ext_resource type="Texture2D" uid="uid://mjaowf1jwd1n" path="res://assets/UI/ZombiesWon.png" id="3_s7r3b"]
+[ext_resource type="PackedScene" uid="uid://bapiacuwiotf4" path="res://卡牌.tscn" id="4_02bbk"]
+[ext_resource type="Texture2D" uid="uid://camia0vpp3via" path="res://assets/对象/太阳花/SunFlower-1.png" id="5_6tj5r"]
+[ext_resource type="Texture2D" uid="uid://cqbmgnpwx352j" path="res://assets/卡牌/太阳花A.png" id="5_b3a8w"]
+[ext_resource type="Texture2D" uid="uid://hdwoeyrt5l05" path="res://assets/卡牌/豌豆射手A.png" id="7_p4bkf"]
+[ext_resource type="Script" path="res://CardResource.gd" id="7_r1yr4"]
+[ext_resource type="Texture2D" uid="uid://blqybgw6syj52" path="res://assets/对象/豌豆射手/Peashooter-1.png" id="8_x52rh"]
+[ext_resource type="Texture2D" uid="uid://dpqjfr4mg6uw7" path="res://assets/卡牌/火爆辣椒A.png" id="9_gemq7"]
+[ext_resource type="Texture2D" uid="uid://b86f44buepbb3" path="res://assets/对象/辣椒/Jalapeno-1.png" id="10_nm4hn"]
+[ext_resource type="PackedScene" uid="uid://btp6du7n16jyg" path="res://草地方格.tscn" id="12_463oe"]
+[ext_resource type="AudioStream" uid="uid://jbc5nyxpxtm1" path="res://assets/音效/DJ.wav" id="14_vak01"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u1etq"]
+b = Vector2(2.08165e-12, 720)
+
+[sub_resource type="Resource" id="Resource_j32sm"]
+script = ExtResource("7_r1yr4")
+pic = ExtResource("5_b3a8w")
+drag_pic = ExtResource("5_6tj5r")
+pic_score_cost = 50
+pic_id = 1
+
+[sub_resource type="Resource" id="Resource_652sn"]
+script = ExtResource("7_r1yr4")
+pic = ExtResource("7_p4bkf")
+drag_pic = ExtResource("8_x52rh")
+pic_score_cost = 100
+pic_id = 2
+
+[sub_resource type="Resource" id="Resource_cfecc"]
+script = ExtResource("7_r1yr4")
+pic = ExtResource("9_gemq7")
+drag_pic = ExtResource("10_nm4hn")
+pic_score_cost = 125
+pic_id = 3
+
+[node name="游戏场景" type="Node2D"]
+script = ExtResource("1_ywci6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oir0j")
+centered = false
+
+[node name="TipSprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(290, 230)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_s7r3b")
+centered = false
+
+[node name="DeathArea2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea2D"]
+shape = SubResource("SegmentShape2D_u1etq")
+
+[node name="阳光收集器" parent="." instance=ExtResource("3_i47c7")]
+position = Vector2(58, 63)
+
+[node name="草地方格类" type="Node2D" parent="."]
+
+[node name="草地方格1" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 75.0
+offset_top = 89.0
+offset_right = 155.0
+offset_bottom = 219.0
+
+[node name="草地方格2" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 71.0
+offset_top = 210.0
+offset_right = 151.0
+offset_bottom = 340.0
+id = 1
+
+[node name="草地方格3" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 74.0
+offset_top = 324.0
+offset_right = 154.0
+offset_bottom = 454.0
+id = 2
+
+[node name="草地方格4" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 69.0
+offset_top = 441.0
+offset_right = 149.0
+offset_bottom = 571.0
+id = 3
+
+[node name="草地方格5" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 65.0
+offset_top = 557.0
+offset_right = 145.0
+offset_bottom = 687.0
+id = 4
+
+[node name="草地方格6" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 166.0
+offset_top = 87.0
+offset_right = 246.0
+offset_bottom = 217.0
+id = 5
+
+[node name="草地方格7" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 168.0
+offset_top = 211.0
+offset_right = 248.0
+offset_bottom = 341.0
+id = 6
+
+[node name="草地方格8" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 166.0
+offset_top = 328.0
+offset_right = 246.0
+offset_bottom = 458.0
+id = 7
+
+[node name="草地方格9" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 165.0
+offset_top = 446.0
+offset_right = 245.0
+offset_bottom = 576.0
+id = 8
+
+[node name="草地方格10" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 170.0
+offset_top = 557.0
+offset_right = 250.0
+offset_bottom = 687.0
+id = 9
+
+[node name="草地方格11" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 266.0
+offset_top = 85.0
+offset_right = 346.0
+offset_bottom = 215.0
+id = 10
+
+[node name="草地方格12" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 263.0
+offset_top = 209.0
+offset_right = 343.0
+offset_bottom = 339.0
+id = 11
+
+[node name="草地方格13" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 262.0
+offset_top = 336.0
+offset_right = 342.0
+offset_bottom = 466.0
+id = 12
+
+[node name="草地方格14" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 269.0
+offset_top = 446.0
+offset_right = 349.0
+offset_bottom = 576.0
+id = 13
+
+[node name="草地方格15" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 266.0
+offset_top = 559.0
+offset_right = 346.0
+offset_bottom = 689.0
+id = 14
+
+[node name="草地方格16" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 361.0
+offset_top = 83.0
+offset_right = 441.0
+offset_bottom = 213.0
+id = 15
+
+[node name="草地方格17" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 360.0
+offset_top = 208.0
+offset_right = 440.0
+offset_bottom = 338.0
+id = 16
+
+[node name="草地方格18" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 368.0
+offset_top = 329.0
+offset_right = 448.0
+offset_bottom = 459.0
+id = 17
+
+[node name="草地方格19" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 363.0
+offset_top = 451.0
+offset_right = 443.0
+offset_bottom = 581.0
+id = 18
+
+[node name="草地方格20" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 366.0
+offset_top = 559.0
+offset_right = 446.0
+offset_bottom = 689.0
+id = 19
+
+[node name="草地方格21" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 457.0
+offset_top = 83.0
+offset_right = 537.0
+offset_bottom = 213.0
+id = 20
+
+[node name="草地方格22" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 454.0
+offset_top = 208.0
+offset_right = 534.0
+offset_bottom = 338.0
+id = 21
+
+[node name="草地方格23" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 458.0
+offset_top = 329.0
+offset_right = 538.0
+offset_bottom = 459.0
+id = 22
+
+[node name="草地方格24" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 460.0
+offset_top = 448.0
+offset_right = 540.0
+offset_bottom = 578.0
+id = 23
+
+[node name="草地方格25" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 465.0
+offset_top = 561.0
+offset_right = 545.0
+offset_bottom = 691.0
+id = 24
+
+[node name="草地方格26" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 558.0
+offset_top = 80.0
+offset_right = 638.0
+offset_bottom = 210.0
+id = 25
+
+[node name="草地方格27" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 554.0
+offset_top = 203.0
+offset_right = 634.0
+offset_bottom = 333.0
+id = 26
+
+[node name="草地方格28" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 557.0
+offset_top = 328.0
+offset_right = 637.0
+offset_bottom = 458.0
+id = 27
+
+[node name="草地方格29" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 554.0
+offset_top = 447.0
+offset_right = 634.0
+offset_bottom = 577.0
+id = 28
+
+[node name="草地方格30" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 559.0
+offset_top = 556.0
+offset_right = 639.0
+offset_bottom = 686.0
+id = 29
+
+[node name="草地方格31" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 654.0
+offset_top = 88.0
+offset_right = 734.0
+offset_bottom = 218.0
+id = 30
+
+[node name="草地方格32" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 651.0
+offset_top = 207.0
+offset_right = 731.0
+offset_bottom = 337.0
+id = 31
+
+[node name="草地方格33" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 650.0
+offset_top = 330.0
+offset_right = 730.0
+offset_bottom = 460.0
+id = 32
+
+[node name="草地方格34" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 650.0
+offset_top = 447.0
+offset_right = 730.0
+offset_bottom = 577.0
+id = 33
+
+[node name="草地方格35" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 649.0
+offset_top = 553.0
+offset_right = 729.0
+offset_bottom = 683.0
+id = 34
+
+[node name="草地方格36" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 742.0
+offset_top = 90.0
+offset_right = 822.0
+offset_bottom = 220.0
+id = 35
+
+[node name="草地方格37" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 737.0
+offset_top = 209.0
+offset_right = 817.0
+offset_bottom = 339.0
+id = 36
+
+[node name="草地方格38" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 743.0
+offset_top = 330.0
+offset_right = 823.0
+offset_bottom = 460.0
+id = 37
+
+[node name="草地方格39" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 745.0
+offset_top = 444.0
+offset_right = 825.0
+offset_bottom = 574.0
+id = 38
+
+[node name="草地方格40" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 743.0
+offset_top = 558.0
+offset_right = 823.0
+offset_bottom = 688.0
+id = 39
+
+[node name="草地方格41" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 840.0
+offset_top = 95.0
+offset_right = 920.0
+offset_bottom = 225.0
+id = 40
+
+[node name="草地方格42" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 843.0
+offset_top = 212.0
+offset_right = 923.0
+offset_bottom = 342.0
+id = 41
+
+[node name="草地方格43" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 849.0
+offset_top = 334.0
+offset_right = 929.0
+offset_bottom = 464.0
+id = 42
+
+[node name="草地方格44" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 851.0
+offset_top = 445.0
+offset_right = 931.0
+offset_bottom = 575.0
+id = 43
+
+[node name="草地方格45" parent="草地方格类" instance=ExtResource("12_463oe")]
+offset_left = 847.0
+offset_top = 555.0
+offset_right = 927.0
+offset_bottom = 685.0
+id = 44
+
+[node name="僵尸类" type="Node2D" parent="."]
+
+[node name="阳光类" type="Node2D" parent="."]
+
+[node name="卡牌类" type="Node2D" parent="."]
+
+[node name="向日葵" parent="卡牌类" instance=ExtResource("4_02bbk")]
+offset_left = 150.0
+offset_top = 10.0
+offset_right = 322.0
+offset_bottom = 244.0
+card_resource = SubResource("Resource_j32sm")
+
+[node name="豌豆射手" parent="卡牌类" instance=ExtResource("4_02bbk")]
+offset_left = 250.0
+offset_top = 10.0
+offset_right = 422.0
+offset_bottom = 244.0
+card_resource = SubResource("Resource_652sn")
+
+[node name="火爆辣椒" parent="卡牌类" instance=ExtResource("4_02bbk")]
+offset_left = 350.0
+offset_top = 10.0
+offset_right = 522.0
+offset_bottom = 244.0
+card_resource = SubResource("Resource_cfecc")
+
+[node name="SunTimer" type="Timer" parent="."]
+
+[node name="ZombieTimer" type="Timer" parent="."]
+
+[node name="TipTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_vak01")
+autoplay = true
+
+[connection signal="area_entered" from="DeathArea2D" to="." method="_on_death_area_2d_entered"]
+[connection signal="timeout" from="SunTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ZombieTimer" to="." method="_on_zombie_timer_timeout"]
+[connection signal="timeout" from="TipTimer" to="." method="_on_tip_timer_timeout"]
+[connection signal="finished" from="BGM" to="." method="_on_bgm_finished"]

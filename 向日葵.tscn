@@ -1,0 +1,106 @@
+[gd_scene load_steps=21 format=3 uid="uid://djdkd1j2it44x"]
+
+[ext_resource type="Script" path="res://向日葵.gd" id="1_7r5ck"]
+[ext_resource type="Texture2D" uid="uid://camia0vpp3via" path="res://assets/对象/太阳花/SunFlower-1.png" id="1_ev7d8"]
+[ext_resource type="Texture2D" uid="uid://ca8tqjlc671ip" path="res://assets/对象/太阳花/SunFlower-2.png" id="2_jjddp"]
+[ext_resource type="Texture2D" uid="uid://c35sqy3t25d1h" path="res://assets/对象/太阳花/SunFlower-3.png" id="3_rr2cs"]
+[ext_resource type="Texture2D" uid="uid://d1vmdo1gnvg5c" path="res://assets/对象/太阳花/SunFlower-4.png" id="4_htpdg"]
+[ext_resource type="Texture2D" uid="uid://dtiuaw32s4srl" path="res://assets/对象/太阳花/SunFlower-5.png" id="5_2nwwp"]
+[ext_resource type="Texture2D" uid="uid://cdphgj3y1agpu" path="res://assets/对象/太阳花/SunFlower-6.png" id="6_xxku3"]
+[ext_resource type="Texture2D" uid="uid://b5v578dgods0n" path="res://assets/对象/太阳花/SunFlower-7.png" id="7_w67pm"]
+[ext_resource type="Texture2D" uid="uid://bcjsnnn1sqng8" path="res://assets/对象/太阳花/SunFlower-8.png" id="8_cxwxs"]
+[ext_resource type="Texture2D" uid="uid://bkte1416uh0wc" path="res://assets/对象/太阳花/SunFlower-9.png" id="9_w3nsb"]
+[ext_resource type="Texture2D" uid="uid://d3eu1mkodd4y6" path="res://assets/对象/太阳花/SunFlower-10.png" id="10_a5q4h"]
+[ext_resource type="Texture2D" uid="uid://7tky5gprtqhv" path="res://assets/对象/太阳花/SunFlower-11.png" id="11_6mq6p"]
+[ext_resource type="Texture2D" uid="uid://ct17fdt57yo0h" path="res://assets/对象/太阳花/SunFlower-12.png" id="12_ec87m"]
+[ext_resource type="Texture2D" uid="uid://bai7nc4f3y124" path="res://assets/对象/太阳花/SunFlower-13.png" id="13_edbvc"]
+[ext_resource type="Texture2D" uid="uid://b7e628cykw7l3" path="res://assets/对象/太阳花/SunFlower-14.png" id="14_xdwpr"]
+[ext_resource type="Texture2D" uid="uid://b48uh07g3mvo5" path="res://assets/对象/太阳花/SunFlower-15.png" id="15_5nlx2"]
+[ext_resource type="Texture2D" uid="uid://bttuy7je58wcb" path="res://assets/对象/太阳花/SunFlower-16.png" id="16_n2vfd"]
+[ext_resource type="Texture2D" uid="uid://dujlh22kw67mc" path="res://assets/对象/太阳花/SunFlower-17.png" id="17_j76fv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5a4nh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ev7d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jjddp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rr2cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_htpdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2nwwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xxku3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w67pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cxwxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w3nsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a5q4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6mq6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ec87m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_edbvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xdwpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5nlx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_n2vfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_j76fv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 17.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sfiw"]
+size = Vector2(108, 130)
+
+[node name="向日葵" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_7r5ck")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5a4nh")
+autoplay = "default"
+frame = 16
+frame_progress = 1.0
+speed_scale = 0.3
+
+[node name="SunFlowerArea2D" type="Area2D" parent="." groups=["plant", "sunflower"]]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SunFlowerArea2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_2sfiw")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="SunFlowerArea2D" to="." method="_on_sun_flower_area_2d_entered"]
+[connection signal="area_exited" from="SunFlowerArea2D" to="." method="_on_sun_flower_area_2d_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

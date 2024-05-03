@@ -1,0 +1,413 @@
+[gd_scene load_steps=89 format=3 uid="uid://1pnx24tanl0k"]
+
+[ext_resource type="Script" path="res://僵尸.gd" id="1_4poau"]
+[ext_resource type="Texture2D" uid="uid://b22bogayhmayk" path="res://assets/对象/普通僵尸/Zombie-1.png" id="2_4b1dw"]
+[ext_resource type="Texture2D" uid="uid://cdqjqlmlbqpi" path="res://assets/对象/普通僵尸/Zombie-2.png" id="3_gld2v"]
+[ext_resource type="Texture2D" uid="uid://dimrouq1phuql" path="res://assets/对象/普通僵尸/Zombie-3.png" id="4_ofa3f"]
+[ext_resource type="Texture2D" uid="uid://cui8spd7g6maq" path="res://assets/对象/普通僵尸/Zombie-4.png" id="5_rlsgm"]
+[ext_resource type="Texture2D" uid="uid://psj021q5cfsa" path="res://assets/对象/普通僵尸/Zombie-5.png" id="6_62q15"]
+[ext_resource type="Texture2D" uid="uid://bvdxibj3fu22u" path="res://assets/对象/普通僵尸/Zombie-6.png" id="7_isouj"]
+[ext_resource type="Texture2D" uid="uid://doch1ftv8chip" path="res://assets/对象/普通僵尸/Zombie-7.png" id="8_suub3"]
+[ext_resource type="Texture2D" uid="uid://cujqnc1hjt0vi" path="res://assets/对象/普通僵尸/Zombie-8.png" id="9_2mwy4"]
+[ext_resource type="Texture2D" uid="uid://cdtsts7p7fog7" path="res://assets/对象/普通僵尸/Zombie-9.png" id="10_duohe"]
+[ext_resource type="Texture2D" uid="uid://bnuuiclgw6dxl" path="res://assets/对象/普通僵尸/Zombie-10.png" id="11_cd72u"]
+[ext_resource type="Texture2D" uid="uid://cdurljcwnj3p5" path="res://assets/对象/普通僵尸/Zombie-11.png" id="12_wjrfc"]
+[ext_resource type="Texture2D" uid="uid://c7rfvor38ko1k" path="res://assets/对象/普通僵尸/Zombie-12.png" id="13_seqtf"]
+[ext_resource type="Texture2D" uid="uid://bb2d070lxudng" path="res://assets/对象/普通僵尸/Zombie-13.png" id="14_lxsxm"]
+[ext_resource type="Texture2D" uid="uid://bdrya07djjegs" path="res://assets/对象/普通僵尸/Zombie-19.png" id="15_rfrnd"]
+[ext_resource type="Texture2D" uid="uid://cq5d8aniktvjk" path="res://assets/对象/普通僵尸/Zombie-20.png" id="16_achif"]
+[ext_resource type="Texture2D" uid="uid://dlsrnosn8hol8" path="res://assets/对象/普通僵尸/Zombie-21.png" id="17_kbf75"]
+[ext_resource type="Texture2D" uid="uid://ckktyhss02xdx" path="res://assets/对象/普通僵尸/ZombieAttack-1.png" id="18_u60o6"]
+[ext_resource type="Texture2D" uid="uid://bf5etllgyqj2m" path="res://assets/对象/普通僵尸/ZombieAttack-2.png" id="19_d7b87"]
+[ext_resource type="Texture2D" uid="uid://cd22ed6vupqqx" path="res://assets/对象/普通僵尸/ZombieAttack-3.png" id="20_7ul2m"]
+[ext_resource type="Texture2D" uid="uid://4u105xelniny" path="res://assets/对象/普通僵尸/ZombieAttack-4.png" id="21_mlqqq"]
+[ext_resource type="Texture2D" uid="uid://bpgmh231ek2go" path="res://assets/对象/普通僵尸/ZombieAttack-5.png" id="22_x7t1n"]
+[ext_resource type="Texture2D" uid="uid://cl7fmjaukp82" path="res://assets/对象/普通僵尸/ZombieAttack-6.png" id="23_y37ro"]
+[ext_resource type="Texture2D" uid="uid://b8u0mmjvij87s" path="res://assets/对象/普通僵尸/ZombieAttack-7.png" id="24_wn6ib"]
+[ext_resource type="Texture2D" uid="uid://8dp4c4no3kvy" path="res://assets/对象/普通僵尸/ZombieAttack-8.png" id="25_4pqw1"]
+[ext_resource type="Texture2D" uid="uid://bxc5ahvwt6oeq" path="res://assets/对象/普通僵尸/ZombieAttack-9.png" id="26_t5q43"]
+[ext_resource type="Texture2D" uid="uid://bgwe4h7134pm8" path="res://assets/对象/普通僵尸/ZombieAttack-10.png" id="27_x8kfh"]
+[ext_resource type="Texture2D" uid="uid://bm02oo8bclfmq" path="res://assets/对象/普通僵尸/ZombieAttack-11.png" id="28_oe3ra"]
+[ext_resource type="Texture2D" uid="uid://cqms2fwt71v5v" path="res://assets/对象/普通僵尸/ZombieAttack-12.png" id="29_t7s6d"]
+[ext_resource type="Texture2D" uid="uid://bkmhoo2vk5eg0" path="res://assets/对象/普通僵尸/ZombieAttack-13.png" id="30_aan2x"]
+[ext_resource type="Texture2D" uid="uid://crv74sx7ini5x" path="res://assets/对象/普通僵尸/ZombieAttack-14.png" id="31_rcrw2"]
+[ext_resource type="Texture2D" uid="uid://cssavj2wndshr" path="res://assets/对象/普通僵尸/ZombieAttack-15.png" id="32_cw1q8"]
+[ext_resource type="Texture2D" uid="uid://d1s28uqugund8" path="res://assets/对象/普通僵尸/ZombieAttack-16.png" id="33_dr4np"]
+[ext_resource type="Texture2D" uid="uid://cnaj5d667tdnx" path="res://assets/对象/普通僵尸/ZombieAttack-17.png" id="34_nlgy2"]
+[ext_resource type="Texture2D" uid="uid://co4bjpmukgb56" path="res://assets/对象/普通僵尸/ZombieAttack-18.png" id="35_ebpev"]
+[ext_resource type="Texture2D" uid="uid://b5e7jvxpgscau" path="res://assets/对象/普通僵尸/ZombieAttack-19.png" id="36_6hsdg"]
+[ext_resource type="Texture2D" uid="uid://c3is6ulsq5a4w" path="res://assets/对象/普通僵尸/ZombieAttack-20.png" id="37_pp66b"]
+[ext_resource type="Texture2D" uid="uid://3ybbs8se22jw" path="res://assets/对象/普通僵尸/BoomDie-1.png" id="38_clvbm"]
+[ext_resource type="Texture2D" uid="uid://60m24afdo35n" path="res://assets/对象/普通僵尸/BoomDie-2.png" id="39_3drx8"]
+[ext_resource type="Texture2D" uid="uid://ch1l7pn1wa8dx" path="res://assets/对象/普通僵尸/BoomDie-3.png" id="40_ryvo5"]
+[ext_resource type="Texture2D" uid="uid://dx4egcw34dbn2" path="res://assets/对象/普通僵尸/BoomDie-4.png" id="41_6rkx7"]
+[ext_resource type="Texture2D" uid="uid://cccogiusvdlnx" path="res://assets/对象/普通僵尸/BoomDie-5.png" id="42_x0dii"]
+[ext_resource type="Texture2D" uid="uid://efvqkkpu3v5g" path="res://assets/对象/普通僵尸/BoomDie-6.png" id="43_f7kh7"]
+[ext_resource type="Texture2D" uid="uid://b8piihoivxh3r" path="res://assets/对象/普通僵尸/BoomDie-7.png" id="44_tuglv"]
+[ext_resource type="Texture2D" uid="uid://b7tlxddpkcmlh" path="res://assets/对象/普通僵尸/BoomDie-8.png" id="45_tgkof"]
+[ext_resource type="Texture2D" uid="uid://benupf617ml3a" path="res://assets/对象/普通僵尸/BoomDie-9.png" id="46_nfejn"]
+[ext_resource type="Texture2D" uid="uid://cta7wnxl10gce" path="res://assets/对象/普通僵尸/BoomDie-10.png" id="47_d06k7"]
+[ext_resource type="Texture2D" uid="uid://bplful4576unw" path="res://assets/对象/普通僵尸/BoomDie-11.png" id="48_o27an"]
+[ext_resource type="Texture2D" uid="uid://bn8qd7or3vaw5" path="res://assets/对象/普通僵尸/BoomDie-12.png" id="49_q4vht"]
+[ext_resource type="Texture2D" uid="uid://bbnap3cakqehc" path="res://assets/对象/普通僵尸/BoomDie-13.png" id="50_vjejj"]
+[ext_resource type="Texture2D" uid="uid://bq4chftse5hta" path="res://assets/对象/普通僵尸/BoomDie-14.png" id="51_o1gtv"]
+[ext_resource type="Texture2D" uid="uid://ctnoq4yvo2wp2" path="res://assets/对象/普通僵尸/BoomDie-15.png" id="52_hgkn8"]
+[ext_resource type="Texture2D" uid="uid://8v0nhemrrwhn" path="res://assets/对象/普通僵尸/BoomDie-16.png" id="53_x7nyi"]
+[ext_resource type="Texture2D" uid="uid://m0bmo2od3aj7" path="res://assets/对象/普通僵尸/BoomDie-17.png" id="54_i24bl"]
+[ext_resource type="Texture2D" uid="uid://dbkpwauwxgprn" path="res://assets/对象/普通僵尸/BoomDie-18.png" id="55_ld72s"]
+[ext_resource type="Texture2D" uid="uid://cuh4wegcqlad4" path="res://assets/对象/普通僵尸/BoomDie-19.png" id="56_atfo1"]
+[ext_resource type="Texture2D" uid="uid://b0je6qg7lvc71" path="res://assets/对象/普通僵尸丢头/ZombieDie-4.png" id="60_q2y8r"]
+[ext_resource type="Texture2D" uid="uid://bpeoqm0ci21oy" path="res://assets/对象/普通僵尸丢头/ZombieDie-6.png" id="62_88whu"]
+[ext_resource type="Texture2D" uid="uid://crcs6f1wpnnc5" path="res://assets/对象/普通僵尸丢头/ZombieDie-7.png" id="63_7s64l"]
+[ext_resource type="Texture2D" uid="uid://c150oubeg4iw7" path="res://assets/对象/普通僵尸丢头/ZombieDie-8.png" id="64_4ctgl"]
+[ext_resource type="Texture2D" uid="uid://ci1f4m5d73f8f" path="res://assets/对象/普通僵尸丢头/ZombieDie-9.png" id="65_k3w4h"]
+[ext_resource type="Texture2D" uid="uid://due7ftwpq7wi2" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-1.png" id="66_g03eu"]
+[ext_resource type="Texture2D" uid="uid://bgmuq4r06k1wg" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-2.png" id="67_eluy6"]
+[ext_resource type="Texture2D" uid="uid://cc56n03vkyiyg" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-3.png" id="68_bsaov"]
+[ext_resource type="Texture2D" uid="uid://bkhr7buslv3cb" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-4.png" id="69_mtq7s"]
+[ext_resource type="Texture2D" uid="uid://cudtek53qpxhr" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-5.png" id="70_x2htd"]
+[ext_resource type="Texture2D" uid="uid://defgudnh4u6an" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-6.png" id="71_41ven"]
+[ext_resource type="Texture2D" uid="uid://dcchhus33xis3" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-7.png" id="72_45t7x"]
+[ext_resource type="Texture2D" uid="uid://2vfvlwnm8uic" path="res://assets/对象/普通僵尸丢头/ZombieHead-2.png" id="73_j8c55"]
+[ext_resource type="Texture2D" uid="uid://dwxfykq7efk8d" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-8.png" id="73_mvlta"]
+[ext_resource type="Texture2D" uid="uid://s0aysnlme760" path="res://assets/对象/普通僵尸丢头/ZombieHead-3.png" id="74_j5635"]
+[ext_resource type="Texture2D" uid="uid://dq53dr3yv6kwy" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-9.png" id="74_yyxen"]
+[ext_resource type="Texture2D" uid="uid://bomjadjnhexq1" path="res://assets/对象/普通僵尸丢头/ZombieHead-4.png" id="75_ckiqx"]
+[ext_resource type="Texture2D" uid="uid://bvbav4jx7yx3c" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-10.png" id="75_ntsax"]
+[ext_resource type="Texture2D" uid="uid://evkssqfwavdh" path="res://assets/对象/普通僵尸丢头/ZombieHead-5.png" id="76_h1lwv"]
+[ext_resource type="Texture2D" uid="uid://dv1ayhtadt7tl" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-11.png" id="76_y84yi"]
+[ext_resource type="Texture2D" uid="uid://dd6felexnemsl" path="res://assets/对象/普通僵尸丢头/ZombieHead-6.png" id="77_0vlay"]
+[ext_resource type="Texture2D" uid="uid://jq17762sbf2c" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-12.png" id="77_hw31y"]
+[ext_resource type="Texture2D" uid="uid://cyc6ynfjowmsk" path="res://assets/对象/普通僵尸丢头/ZombieHead-7.png" id="78_faot7"]
+[ext_resource type="Texture2D" uid="uid://dm27beu563i5p" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-13.png" id="78_pyuhv"]
+[ext_resource type="Texture2D" uid="uid://cme04rthkx3md" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-15.png" id="79_jlfsq"]
+[ext_resource type="Texture2D" uid="uid://dwxoj5tirgcok" path="res://assets/对象/普通僵尸丢头/ZombieHead-8.png" id="79_wyexk"]
+[ext_resource type="Texture2D" uid="uid://cdpg4yjqyvgnp" path="res://assets/对象/普通僵尸丢头/ZombieHead-9.png" id="80_caewg"]
+[ext_resource type="Texture2D" uid="uid://bawe5g2lrbqvy" path="res://assets/对象/普通僵尸丢头/ZombieLostHead-16.png" id="80_g1sfg"]
+[ext_resource type="Texture2D" uid="uid://lsoechtipvex" path="res://assets/对象/普通僵尸丢头/ZombieHead-10.png" id="81_htcej"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fsltr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_u60o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_d7b87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7ul2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_mlqqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_x7t1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_y37ro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_wn6ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_4pqw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_t5q43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x8kfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_oe3ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_t7s6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_aan2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_rcrw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_cw1q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_dr4np")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_nlgy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ebpev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_6hsdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_pp66b")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 23.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4b1dw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gld2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ofa3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rlsgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_62q15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_isouj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_suub3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2mwy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_duohe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cd72u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wjrfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_seqtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lxsxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rfrnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_achif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kbf75")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_clvbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3drx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ryvo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_6rkx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_x0dii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_f7kh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_tuglv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tgkof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_nfejn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_d06k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_o27an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_q4vht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_vjejj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_o1gtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_hgkn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_x7nyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_i24bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ld72s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_atfo1")
+}],
+"loop": false,
+"name": &"die",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_q2y8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_88whu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_7s64l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_4ctgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_k3w4h")
+}],
+"loop": false,
+"name": &"die_laid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_g03eu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_eluy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_bsaov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_mtq7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_x2htd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_41ven")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_45t7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_mvlta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_yyxen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ntsax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_y84yi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_hw31y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_pyuhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_jlfsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_g1sfg")
+}],
+"loop": true,
+"name": &"die_walk",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7g44"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_j8c55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_j5635")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ckiqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_h1lwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_0vlay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_faot7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_wyexk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_caewg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_htcej")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55pnq"]
+size = Vector2(63, 112)
+
+[node name="僵尸" type="Node2D"]
+script = ExtResource("1_4poau")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_fsltr")
+animation = &"die"
+autoplay = "default"
+speed_scale = 0.5
+
+[node name="HeadAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(49, 33)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_c7g44")
+frame = 8
+frame_progress = 1.0
+speed_scale = 0.5
+
+[node name="ZombieArea2D" type="Area2D" parent="." groups=["zombie"]]
+collision_layer = 8
+collision_mask = 23
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZombieArea2D"]
+position = Vector2(-1.5, -2)
+shape = SubResource("RectangleShape2D_55pnq")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_finished"]
+[connection signal="animation_finished" from="HeadAnimatedSprite2D" to="." method="_on_head_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="ZombieArea2D" to="." method="_on_zombie_area_2d_entered"]
+[connection signal="area_exited" from="ZombieArea2D" to="." method="_on_zombie_area_2d_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
