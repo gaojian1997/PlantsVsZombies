@@ -12,7 +12,7 @@ func underattack(damage):
     Store.grass_cache[index] = 0
 
 func _ready():
-  $Timer.start(10)
+  $Timer.start(12)
 
 func _on_timer_timeout():
   var sun = sun_scene.instantiate()

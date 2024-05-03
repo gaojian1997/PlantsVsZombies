@@ -15,7 +15,7 @@ func add_zombie():
   zombie.global_position.y = [150, 270, 400, 510, 620].pick_random()
 
 func _ready():
-  $SunTimer.start(7.5)
+  $SunTimer.start(8.5)
 
 func _on_timer_timeout():
   if $ZombieTimer.is_stopped():
