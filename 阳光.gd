@@ -27,7 +27,7 @@ func _ready():
   max_position_y = rng.randi_range(padding + padding_top, screen_size.y - padding)
 
 func _process(delta):
-  rotation_degrees += 1 * delta
+  rotation_degrees += 50 * delta
   if is_from_sunflower:
     return
   if position.y < max_position_y:

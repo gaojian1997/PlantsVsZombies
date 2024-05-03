@@ -13,8 +13,8 @@ func _ready():
   prev_score = Store.score
   update_score_label(Store.score)
 
-func _process(_delta):
-  $Sprite2D.rotation_degrees += 1
+func _process(delta):
+  $Sprite2D.rotation_degrees += 40 * delta
   if prev_score != Store.score:
     change_score_to(Store.score)
     prev_score = Store.score
